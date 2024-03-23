@@ -60,6 +60,8 @@
         }
 
         async function scanCode() {
+            const result = await liff.scanCode();
+            document.getElementById("scanCode").append(result.value);
         }
 
         function openWindow() {
@@ -133,7 +135,7 @@
             getEnvironment()
             getUserProfile()
             getContext()
-            // getFriendship()
+            getFriendship()
             // createUniversalLink()
         }
         main()
