@@ -69,6 +69,17 @@
         }
 
         async function sendMsg() {
+            if (liff.getContext().type !== "none" && liff.getContext().type !== "external") {
+                // Send messages here.
+                await liff.sendMessages([
+                    {
+                        "type": "sticker",
+                        "stickerId": 1,
+                        "packageId": 1,
+                    }
+                ])
+                alert("Message Sent")
+            }
         }
 
         function getContext() {
@@ -77,10 +88,6 @@
              document.getElementById("utouId").append(liff.getContext().utouId);
              document.getElementById("roomId").append(liff.getContext().roomId);
              document.getElementById("groupId").append(liff.getContext().groupId);
-    // <p id="viewType"><b>viewType:</b> </p>
-    // <p id="utouId"><b>utouId:</b> </p>
-    // <p id="roomId"><b>roomId:</b> </p>
-    // <p id="groupId"><b>groupId:</b> </p
         }
 
         async function getUserProfile() {
