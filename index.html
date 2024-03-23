@@ -66,6 +66,13 @@
         }
 
         async function getFriendship() {
+            const friend = await liff.getFriendship()
+            document.getElementById("friendship").append(friend.fiendFlag);
+            if (!friend.fiendFlag) {
+                if (confirm("คุณยังไม่ได้เป็นเพื่อน จะเพิ่มเพื่อนเลยไหม ??")) {
+                    window.location = ""
+                }
+            }
         }
 
         async function sendMsg() {
