@@ -72,6 +72,15 @@
         }
 
         function getContext() {
+             document.getElementById("type").append(liff.getContext().type);
+             document.getElementById("viewType").append(liff.getContext().viewType);
+             document.getElementById("utouId").append(liff.getContext().utouId);
+             document.getElementById("roomId").append(liff.getContext().roomId);
+             document.getElementById("groupId").append(liff.getContext().groupId);
+    // <p id="viewType"><b>viewType:</b> </p>
+    // <p id="utouId"><b>utouId:</b> </p>
+    // <p id="roomId"><b>roomId:</b> </p>
+    // <p id="groupId"><b>groupId:</b> </p
         }
 
         async function getUserProfile() {
@@ -105,7 +114,7 @@
             await liff.init({ liffId: "2004273909-l3dZk393" });
             getEnvironment()
             getUserProfile()
-            // getContext()
+            getContext()
             // getFriendship()
             // createUniversalLink()
         }
