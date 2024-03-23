@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-    <title>My LIFF app</title>
+    <title>TKC StarQuest</title>
     <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 
@@ -15,7 +15,7 @@
     <p id="version"><b>Version:</b> </p>
     <p id="isInClient"><b>isInClient:</b> </p>
     <p id="accessToken"><b>AccessToken:</b> </p>
-    <img id="pictureUrl" width="50" height="50">
+    <img id="pictureUrl" width="100" height="100">
     <p id="userId"><b>userId:</b> </p>
     <p id="displayName"><b>displayName:</b> </p>
     <p id="statusMessage"><b>statusMessage:</b> </p>
@@ -69,10 +69,15 @@
             liff.closeWindow();
         }
 
+        // เงื่อนไขการใช้งาน liff.scanCodeV2()
+        // 1. LIFF SDK จะต้องเป็น v2.15.0 หรือใหม่กว่า
+        // 2. Screen size ของ LIFF app ที่สร้างจะต้องกำหนดขนาดเป็นแบบ Full
+        // 3. แอป LINE ของผู้ใช้งานจะต้องเป็น v11.7.0 หรือใหม่กว่า
+        // 4. สำหรับผู้ใช้ iOS จะต้องอัพเดท OS เป็น 14.3 หรือใหม่กว่า
+        // 5. สำหรับ External browser จะต้องรองรับ WebRTC โดยสามารถตรวจสอบได้จากการเปิดเว็บ What Web Can Do Today
         async function scanCodeV2() {
             try {
                 const result = await liff.scanCodeV2();
-                // document.querySelector('#result').innerHTML = result.value;
                 document.getElementById("scanCode").append(result.value);
             } catch (error) {
                 alert('scanCodeV2', error);
