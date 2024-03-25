@@ -47,7 +47,7 @@
   </script> -->
 
     <!-- <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> -->
-    <script>
+    <!-- <script>
         // Query Params
         const queryString = decodeURIComponent(window.location.search);
         const params = new URLSearchParams(queryString);
@@ -68,7 +68,7 @@
         // 4. get the value of "name"
         const name = params.get('name');
         console.log(name)
-    </script>
+    </script> -->
 
     <script src="https://static.line-scdn.net/liff/edge/versions/2.23.1/sdk.js"></script>
     <script>
@@ -181,17 +181,17 @@
 
         async function main() {
             // alert("LINE Developers x Skooldio");
-            // await liff.init({ liffId: "2004273909-l3dZk393" });
-            // document.getElementById("isLoggedIn").append(liff.isLoggedIn());
-            // if (liff.isLoggedIn()) {
-            //     getEnvironment();
-            //     getUserProfile();
-            //     getContext();
-            //     getFriendship();
-            //     createUniversalLink()
-            // } else {
-            //     liff.login();
-            // }
+            await liff.init({ liffId: "2004273909-l3dZk393" });
+            document.getElementById("isLoggedIn").append(liff.isLoggedIn());
+            if (liff.isLoggedIn()) {
+                getEnvironment();
+                getUserProfile();
+                getContext();
+                getFriendship();
+                createUniversalLink()
+            } else {
+                liff.login();
+            }
         }
         main()
     </script>
