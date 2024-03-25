@@ -46,29 +46,13 @@
     console.log("Hello World!")
   </script> -->
 
-    <!-- <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> -->
-    <!-- <script>
-        // Query Params
-        const queryString = decodeURIComponent(window.location.search);
-        const params = new URLSearchParams(queryString);
-        document.getElementById("param").append(params.get("param"));
-
-        for (const nameParam of params.keys()) {
-                console.log(nameParam);
-        }
-
-        for (const value of params.values()) {
-                console.log(value);
-        }
-        
-        // 3. check if the query string contains "contact"
-        const containsContact = params.has('contact');
-        console.log(containsContact);
-
-        // 4. get the value of "name"
-        const name = params.get('name');
-        console.log(name)
-    </script> -->
+    <!-- Vconsole   -->
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+    <script>
+        // VConsole will be exported to `window.VConsole` by default.
+        var vConsole = new window.VConsole();
+        console.log("Vconsole ready ...")
+    </script>
 
     <script src="https://static.line-scdn.net/liff/edge/versions/2.23.1/sdk.js"></script>
     <script>
