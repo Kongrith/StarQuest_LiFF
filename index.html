@@ -52,6 +52,22 @@
         const queryString = decodeURIComponent(window.location.search);
         const params = new URLSearchParams(queryString);
         document.getElementById("param").append(params.get("param"));
+
+        for (const nameParam of params.keys()) {
+                console.log(nameParam);
+        }
+
+        for (const value of params.values()) {
+                console.log(value);
+        }
+        
+        // 3. check if the query string contains "contact"
+        const containsContact = params.has('contact');
+        console.log(containsContact);
+
+        // 4. get the value of "name"
+        const name = params.get('name');
+        console.log(name)
     </script>
 
     <script src="https://static.line-scdn.net/liff/edge/versions/2.23.1/sdk.js"></script>
@@ -164,18 +180,18 @@
         }
 
         async function main() {
-            // alert("LINE Developers x Skooldio");
-            // await liff.init({ liffId: "2004273909-l3dZk393" });
-            // document.getElementById("isLoggedIn").append(liff.isLoggedIn());
-            // if (liff.isLoggedIn()) {
-            //     getEnvironment();
-            //     getUserProfile();
-            //     getContext();
-            //     getFriendship();
-            //     createUniversalLink()
-            // } else {
-            //     liff.login();
-            // }
+            alert("LINE Developers x Skooldio");
+            await liff.init({ liffId: "2004273909-l3dZk393" });
+            document.getElementById("isLoggedIn").append(liff.isLoggedIn());
+            if (liff.isLoggedIn()) {
+                getEnvironment();
+                getUserProfile();
+                getContext();
+                getFriendship();
+                createUniversalLink()
+            } else {
+                liff.login();
+            }
         }
         main()
     </script>
