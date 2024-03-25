@@ -23,6 +23,17 @@
         const params = new URLSearchParams(queryString);
         document.getElementById("param").append(params.get("param"));
     </script>
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.23.1/sdk.js"></script>
+    <script>
+        async function main(){
+            await liff.init({ liffId: "2004273909-l3dZk393" });
+            if (liff.isLoggedIn()) {
+                getUserProfile();
+            } else {
+                liff.login();
+            }
+        }
+    </script>
 </body>
 
 </html>
