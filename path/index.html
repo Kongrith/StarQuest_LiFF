@@ -6,11 +6,14 @@
     <meta name="viewport"
         content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
     <title>Path</title>
-    <link rel="stylesheet" href="css/style.css" media="all">
+    <!-- <link rel="stylesheet" href="css/style.css" media="all"> -->
+    <script>
+        document.write('<link rel="stylesheet href="css/style.css?cache=' + new Daate().getTime() + '">');
+    </script>
 </head>
 
 <body>
-    <p><b> Latest: Vconsole</b></p>
+    <p><b> Latest: avoid Cached</b></p>
     <p id="param"><b>Query Param: </b></p>
     <img id="pictureUrl" width="200" height="200">
     <p id="userId"><b>userId:</b> </p>
