@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <p id="param"><b>Query Param: </b></p>
     <p id="os"><b>OS:</b> </p>
     <p id="language"><b>Language:</b> </p>
     <p id="version"><b>Version:</b> </p>
@@ -46,6 +47,13 @@
   </script> -->
 
     <!-- <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> -->
+    <script>
+        // Query Params
+        const queryString = decodeURIComponent(window.location.search);
+        const params = new URLSearchParams(queryString);
+        document.getElementById("param").append(params.get("param"));
+    </script>
+    
     <script src="https://static.line-scdn.net/liff/edge/versions/2.23.1/sdk.js"></script>
     <script>
         function createUniversalLink() {
